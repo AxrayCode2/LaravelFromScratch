@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +11,9 @@
 */
 
 Route::get('/', function () {
-    $tasks = [
-        'First Task',
-        'Second Task'
-    ];
-    return view('welcome', compact('tasks'));
+    $tasks = DB::table('tasks')->get();
+    return $tasks;
+    // return view('welcome', compact('tasks'));
 });
 
 
